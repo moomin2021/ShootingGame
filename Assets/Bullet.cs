@@ -31,4 +31,15 @@ public class Bullet : MonoBehaviour
             }
         }
     }
+
+    // --Enemyとの当たり判定用処理-- //
+    void OnTriggerEnter(Collider other)
+    {
+        // --もし当たったオブジェクトのタグが"Enemy"だったら
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.GetComponent<Enemy>().Damege();
+
+        }
+    }
 }
